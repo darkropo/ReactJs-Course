@@ -2,7 +2,7 @@
 import "./App.css";
 import ExpenseRepeater from "./components/Expenses/ExpenseRepeater";
 
-function App() {
+const App = () => {
   const expenses = [
     {
       id: "e1",

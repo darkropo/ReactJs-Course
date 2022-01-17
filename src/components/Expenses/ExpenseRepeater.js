@@ -2,7 +2,7 @@ import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import "./ExpenseRepeater.css";
 
-function ExpenseRepeater(props) {
+const ExpenseRepeater = (props) => {
   return (
     <Card className="expenses">
       <ExpenseItem
