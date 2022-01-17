@@ -1,6 +1,6 @@
 //import logo from './logo.svg';
 import "./App.css";
-import ExpenseRepeater from "./components/ExpenseRepeater";
+import ExpenseRepeater from "./components/Expenses/ExpenseRepeater";
 
 function App() {
   const expenses = [
