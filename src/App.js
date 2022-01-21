@@ -1,5 +1,6 @@
 //import logo from './logo.svg';
 import "./App.css";
+import NewExpense from "./components/NewExpense/NewExpense";
 import ExpenseRepeater from "./components/Expenses/ExpenseRepeater";
 
 const App = () => {
@@ -29,6 +30,9 @@ const App = () => {
       <div>
         <ExpenseRepeater expenses={expenses} />
       </div>
+      <div>
+        <NewExpense></NewExpense>
+      </div> 
     </div>
   );
 }
