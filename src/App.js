@@ -3,6 +3,7 @@ import "./App.css";
 import NewExpense from "./components/NewExpense/NewExpense";
 import ExpenseRepeater from "./components/Expenses/ExpenseRepeater";
 
+
 const App = () => {
   const expenses = [
     {
@@ -33,11 +34,12 @@ const App = () => {
   return (
     <div className="App">
       <div>
-        <ExpenseRepeater expenses={expenses} />
+        <NewExpense onAddExpense={addExpenseHandler} ></NewExpense>
       </div>
       <div>
-        <NewExpense onAddExpense={addExpenseHandler} ></NewExpense>
-      </div> 
+        <ExpenseRepeater expenses={expenses} />
+      </div>
+       
     </div>
   );
 }
