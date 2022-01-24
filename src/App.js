@@ -1,6 +1,8 @@
 //import logo from './logo.svg';
 import "./App.css";
+import NewExpense from "./components/NewExpense/NewExpense";
 import ExpenseRepeater from "./components/Expenses/ExpenseRepeater";
+
 
 const App = () => {
   const expenses = [
@@ -24,11 +26,20 @@ const App = () => {
       date: new Date(2021, 5, 12),
     },
   ];
+
+  const addExpenseHandler = expense =>{
+    console.log('in App.js');
+    console.log(expense);
+  };
   return (
     <div className="App">
       <div>
+        <NewExpense onAddExpense={addExpenseHandler} ></NewExpense>
+      </div>
+      <div>
         <ExpenseRepeater expenses={expenses} />
       </div>
+       
     </div>
   );
 }
