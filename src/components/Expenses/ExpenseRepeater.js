@@ -1,17 +1,17 @@
 import { useState } from "react";
-import ExpenseItem from "./ExpenseItem";
 import Card from "../UI/Card";
 import "./ExpenseRepeater.css";
+import ExpensesChart from "./ExpensesChart";
 import ExpensesFilter from "./ExpensesFilter";
+import ExpensesList from "./ExpensesList";
 
 const ExpenseRepeater = (props) => {
   const [filteredYear, setFilteredYear] = useState("2020");
   const filterByYear = (yearSelected) => {
     setFilteredYear(yearSelected);
-    
   };
 
-  const filteredByYear = props.expenses.filter(expense =>{
+  const filteredByYear = props.expenses.filter((expense) => {
     return expense.date.getFullYear().toString() === filteredYear;
   });
 
@@ -22,14 +22,8 @@ const ExpenseRepeater = (props) => {
           selected={filteredYear}
           onChangeFilter={filterByYear}
         ></ExpensesFilter>
-        {filteredByYear.map((expense) => (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          ></ExpenseItem>
-        ))}
+        <ExpensesChart expenses={filteredByYear}></ExpensesChart>
+        <ExpensesList expenses={filteredByYear}></ExpensesList>
       </Card>
     </div>
   );
